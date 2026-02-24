@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portfolio of a Business Intelligence Developer specializing in Snowflake, Power BI, and Data Modeling.">
+    <title>BI Developer Portfolio | Data-Driven Solutions</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<!-- Scroll-Linked Visual (Neural Network) -->
+<div class="scroll-net-container">
+    <svg id="scroll-net" viewBox="0 0 100 800" preserveAspectRatio="none">
+        <!-- JS will populate nodes and connections here -->
+    </svg>
+</div>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <!-- AI Data Assistant Input -->
+            <div class="ai-assistant">
+                <span class="ai-prefix">Michael McKenzie AI></span>
+                <input type="text" id="ai-input" placeholder="Ask about my portfolio..." autocomplete="off">
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#work">work</a></li>
+                <li><a href="#personal">personal</a></li>
+                <li><a href="#skills">skills</a></li>
+                <li><a href="#about">about</a></li>
+                <li><a href="#" class="btn-resume">Download Resume</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero container">
+            <div class="hero-content">
+                <h1 class="glitch-stack">
+                    <span class="glitch" data-text="DATA DRIVEN">DATA DRIVEN</span>
+                    <span class="glitch" data-text="RESOURCEFUL">RESOURCEFUL</span>
+                    <span class="glitch" data-text="PROBLEM SOLVER">PROBLEM SOLVER</span>
+                </h1>
+                <p class="bio">I’m <span class="highlight">Michael McKenzie</span>, a BI Developer at SpartanNash. I
+                    specialize in <span class="highlight">Snowflake</span> and <span class="highlight">Power BI</span>,
+                    but I also lean on <span class="highlight">Python</span> for things like <span
+                        class="highlight">machine learning</span> and data transformation with both Pandas
+                    and
+                    Spark (Snowpark). I excel when faced with complex, open-ended problems, consistently finding a path
+                    to
+                    clarity, no matter the hurdles. I love the challenge of turning messy, fragmented data into
+                    high-performance tools that actually help people make sense of their work and get things done.</p>
+                <a href="#work" class="btn-primary">Professional Experience</a>
+            </div>
+            <div class="hero-visual">
+                <!-- Abstract Data Visualization Placeholder -->
+                <img src="headshot.png" alt="Professional Headshot" class="hero-image">
+            </div>
+        </section>
+
+        <!-- Mission & Philosophy Section -->
+        <section id="mission" class="mission container">
+            <div class="mission-grid">
+                <div class="mission-card site-purpose">
+                    <span class="card-label">Site Objective</span>
+                    <h3>Core Purpose</h3>
+                    <p>A developmental sandbox for high-performance data engineering and human-centric AI integration.
+                        This portfolio serves as a live demonstration of translating machine-scale complexity into
+                        actionable strategy.</p>
+                </div>
+                <div class="mission-card ai-stance">
+                    <span class="card-label">AI Philosophy</span>
+                    <h3>The AI Stance</h3>
+                    <p>"AI is the engine, but Data is the fuel. Effective AI requires rigorous data modeling, not just
+                        prompt engineering. My focus is on building the infrastructure that makes intelligence
+                        possible."</p>
+                </div>
+                <div class="mission-card bi-role">
+                    <span class="card-label">The Translator</span>
+                    <h3>The BI Developer</h3>
+                    <p>In the age of LLMs, the BI Developer is the translator. We bridge the gap between architectural
+                        silos and executive decision-making, ensuring data remains clean, contextual, and high-velocity.
+                    </p>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span class="mouse"></span>
+                <span class="text">Scroll for Data</span>
+            </div>
+        </section>
+
+        <!-- Professional Work Section -->
+        <section id="work" class="projects container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="projects-grid">
+                <!-- Project 3: The Strategist (Moved to Work) -->
+                <article class="project-card strategist">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <span class="tag">Migration Strategy</span>
+                            <span class="tag">Hyperion -> Power BI</span>
+                        </div>
+                        <h3>The Strategist</h3>
+                        <div class="case-study-layout">
+                            <div class="migration-flow">
+                                <span>Hyperion</span>
+                                <span class="arrow">→</span>
+                                <span>Power BI</span>
+                            </div>
+                            <ul class="stats">
+                                <li><strong>40%</strong> Perf Boost</li>
+                                <li><strong>$20k</strong> Cost Savings</li>
+                            </ul>
+                        </div>
+                        <p>Enterprise-scale migration: modernizing legacy reporting systems into agile BI solutions.</p>
+                    </div>
+                </article>
+
+                <!-- Project 2: The Engineer (Moved to Work) -->
+                <article class="project-card engineer">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <span class="tag">Data Engineering</span>
+                            <span class="tag">Snowflake</span>
+                        </div>
+                        <h3>The Engineer</h3>
+                        <div class="code-window">
+                            <div class="window-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <pre><code>SELECT * 
+FROM CORE.TRANSFORMED_SALES
+WHERE BIZ_DATE = CURRENT_DATE()
+CLUSTER BY (REGION_ID);</code></pre>
+                        </div>
+                        <p>Optimized data pipelines and warehouse architecture for SpartanNash.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Personal Projects Section -->
+        <section id="personal" class="projects container">
+            <h2 class="section-title">Personal Portfolio</h2>
+            <div class="projects-grid">
+                <!-- Project 1: The Visualizer (Moved to Personal) -->
+                <article class="project-card visualizer">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <span class="tag">Data Visualization</span>
+                            <span class="tag">Solana/Crypto</span>
+                        </div>
+                        <h3>The Visualizer</h3>
+                        <div class="media-placeholder">
+                            <div class="chart-mockup">
+                                <div style="height: 60%"></div>
+                                <div style="height: 80%"></div>
+                                <div style="height: 40%"></div>
+                                <div style="height: 90%"></div>
+                                <div style="height: 50%"></div>
+                            </div>
+                        </div>
+                        <p>Real-time Solana dashboard leveraging custom API integrations.</p>
+                    </div>
+                </article>
+
+                <!-- Future Project Placeholder/Skeleton -->
+                <article class="project-card skeleton">
+                    <div class="card-content">
+                        <div class="card-header">
+                            <span class="tag">Developing...</span>
+                        </div>
+                        <h3>[Upcoming Project]</h3>
+                        <div class="media-placeholder">
+                            <p style="color: var(--accent-muted); font-family: var(--font-mono); font-size: 0.8rem;">
+                                In Development</p>
+                        </div>
+                        <p>Next exploration into specialized data visualization and predictive modeling.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills" class="skills container">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="skills-cloud">
+                <span class="skill-item">Snowflake</span>
+                <span class="skill-item">SQL</span>
+                <span class="skill-item">DAX</span>
+                <span class="skill-item">Power BI</span>
+                <span class="skill-item">Python</span>
+                <span class="skill-item">Solana API</span>
+                <span class="skill-item">Data Modeling</span>
+                <span class="skill-item">ETL/ELT</span>
+            </div>
+        </section>
+
+        <section id="about" class="about container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>Background in building historical pricing models and enterprise data solutions at
+                    <strong>SpartanNash</strong>.
+                </p>
+                <p>Focused on transforming raw data into actionable intelligence through robust engineering and
+                    intuitive visualization.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer container">
+        <p>&copy; 2024 BI Developer. All systems operational.</p>
+    </footer>
+
+    <!-- AI Response Container -->
+    <div id="ai-response-modal" class="ai-modal">
+        <div class="ai-content">
+            <div class="ai-header">
+                <span>AI Analysis Log</span>
+                <button class="close-ai">[X]</button>
+            </div>
+            <div id="ai-output" class="typewriter"></div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>

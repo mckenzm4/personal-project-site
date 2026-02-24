@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Environment variables - NEVER commit this
+.env
+
+# Debug files
+check_models.js
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
