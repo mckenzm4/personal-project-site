@@ -581,10 +581,12 @@ pre {
     color: var(--text-secondary);
     border-radius: 4px;
     font-size: 0.9rem;
-    transition: all 0.3s ease;
-    cursor: default;
+    transition: all 0.08s ease-out;
+    cursor: pointer;
     opacity: 0;
     transform: translateY(15px);
+    text-decoration: none;
+    display: inline-block;
 }
 
 /* Staggered delay for skills */
@@ -596,9 +598,10 @@ pre {
 
 .skill-item:hover {
     color: var(--accent-primary);
-    border-color: rgba(100, 181, 246, 0.4);
-    background: rgba(100, 181, 246, 0.05);
-    transform: translateY(-2px) !important;
+    border-color: rgba(100, 181, 246, 0.6);
+    background: rgba(100, 181, 246, 0.1);
+    transform: translateY(-3px) scale(1.04) !important;
+    box-shadow: 0 4px 18px rgba(100, 181, 246, 0.2);
 }
 
 /* About Section */

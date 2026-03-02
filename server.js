@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const path = require('path');
+const fs = require('fs');
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 dotenv.config();
@@ -30,20 +31,8 @@ if (!apiKey || apiKey === 'your_gemini_api_key_here') {
 
 const genAI = new GoogleGenerativeAI(apiKey);
 
-// Michael's Portfolio Context for the AI
-const michaelContext = `
-You are a helpful AI assistant for Michael McKenzie's professional portfolio website.
-Michael is a Business Intelligence Developer at SpartanNash.
-Skills: Snowflake, Power BI, Data Modeling, SQL, Python (Pandas/Spark/Snowpark), Machine Learning.
-Key Work:
-1. "The Strategist": Migrated Hyperion to Power BI (40% boost, $20k savings).
-2. "The Engineer": Optimized Snowflake pipelines/architecture at SpartanNash.
-3. "The Visualizer": Real-time Solana crypto dashboard.
-
-Michael is passionate about turning messy data into intuitive, high-performance tools.
-Answer questions about Michael's work, skills, and background professionally and concisely.
-If a question is outside Michael's professional scope, politely steer it back.
-`;
+// Load context from file — same source as Vercel deployment
+const michaelContext = fs.readFileSync(path.join(__dirname, 'api', 'context.md'), 'utf-8');
 
 app.post('/api/chat', async (req, res) => {
     try {
@@ -56,7 +45,7 @@ app.post('/api/chat', async (req, res) => {
         console.log(`Query: "${message}"`);
 
         // Use gemini-2.5-pro
-        const model = genAI.getGenerativeModel({ model: "gemini-2.5-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
         // Combining context + message into a single prompt for maximum compatibility
         const prompt = `System Context: ${michaelContext}\n\nUser Question: ${message}`;
