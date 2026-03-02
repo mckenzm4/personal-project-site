@@ -240,4 +240,84 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- GITHUB PROJECTS ---
+    loadGitHubProjects();
+
 });
+
+async function loadGitHubProjects() {
+    const grid = document.getElementById('github-projects-grid');
+    if (!grid) return;
+
+    // Language → hex color mapping (GitHub's standard colors)
+    const langColors = {
+        'Python': '#3572A5',
+        'JavaScript': '#f1e05a',
+        'Jupyter Notebook': '#DA5B0B',
+        'SQL': '#e38c00',
+        'TypeScript': '#3178c6',
+        'HTML': '#e34c26',
+        'R': '#276dc3',
+    };
+
+    function formatName(name) {
+        return name.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+    }
+
+    function timeAgo(dateStr) {
+        const months = Math.floor((Date.now() - new Date(dateStr)) / (1000 * 60 * 60 * 24 * 30));
+        if (months === 0) return 'this month';
+        if (months === 1) return '1 mo ago';
+        return `${months} mo ago`;
+    }
+
+    try {
+        const res = await fetch('https://api.github.com/users/mckenzm4/repos?sort=updated&per_page=100');
+        if (!res.ok) throw new Error('GitHub API error');
+        const repos = await res.json();
+
+        // Only show projects explicitly tagged with "portfolio-project" on GitHub
+        const projects = repos.filter(r =>
+            !r.fork &&
+            r.topics &&
+            r.topics.includes('portfolio-project')
+        );
+
+        if (projects.length === 0) {
+            grid.innerHTML = '<p style="color:var(--text-secondary);font-family:var(--font-mono);grid-column:1/-1">Live projects curating... check back soon.</p>';
+            return;
+        }
+
+        grid.innerHTML = projects.map(repo => {
+            const color = langColors[repo.language] || '#64b5f6';
+            const langBadge = repo.language
+                ? `<span class="gh-lang" style="color:${color};border-color:${color}40;background-color:${color}18">${repo.language}</span>`
+                : `<span></span>`;
+
+            const demoBtn = repo.homepage
+                ? `<a href="${repo.homepage}" target="_blank" rel="noopener" class="gh-btn gh-btn-demo">↗ Demo</a>`
+                : '';
+
+            const desc = repo.description || 'No description provided.';
+
+            return `
+            <article class="project-card gh-card">
+                <div class="card-content">
+                    <div class="gh-card-header">
+                        ${langBadge}
+                        <span class="gh-updated">${timeAgo(repo.updated_at)}</span>
+                    </div>
+                    <h3 class="gh-title">${formatName(repo.name)}</h3>
+                    <p class="gh-desc">${desc}</p>
+                    <div class="gh-actions">
+                        <a href="${repo.html_url}" target="_blank" rel="noopener" class="gh-btn">⊞ GitHub</a>
+                        ${demoBtn}
+                    </div>
+                </div>
+            </article>`;
+        }).join('');
+
+    } catch (err) {
+        grid.innerHTML = '<p style="color:var(--text-secondary);font-family:var(--font-mono);grid-column:1/-1;opacity:0.6">Could not load projects from GitHub.</p>';
+    }
+}
