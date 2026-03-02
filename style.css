@@ -767,14 +767,13 @@ footer {
     box-shadow: 0 0 10px rgba(100, 181, 246, 0.5);
 }
 
-.timeline-node-edu {
-    width: 9px;
-    height: 9px;
-    background: transparent;
-    border: 2px solid var(--accent-muted);
-    box-shadow: none;
-    top: 0.9rem;
-    left: calc(-2rem + 2px);
+.timeline-node-cap {
+    position: absolute;
+    left: calc(-2rem - 2px);
+    top: 0.55rem;
+    font-size: 0.95rem;
+    line-height: 1;
+    user-select: none;
 }
 
 .timeline-card {
