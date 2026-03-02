@@ -39,9 +39,9 @@ module.exports = async (req, res) => {
                 return res.status(400).json({ error: 'Message is required' });
             }
 
-            console.log("Using model: gemini-2.5-pro");
+            console.log("Using model: gemini-1.5-flash");
             const model = genAI.getGenerativeModel({
-                model: "gemini-2.5-pro",
+                model: "gemini-1.5-flash",
                 systemInstruction: michaelContext,
             });
 

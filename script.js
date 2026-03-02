@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                 } catch (error) {
-                    aiOutput.textContent = "Unable to connect to the AI assistant. Please ensure the backend server is running at localhost:3000.";
+                    aiOutput.textContent = "Unable to reach the AI assistant. The server may be temporarily unavailable — please try again in a moment.";
                 }
             }
         });
