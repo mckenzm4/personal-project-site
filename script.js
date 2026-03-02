@@ -222,4 +222,22 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- TIMELINE ACCORDION ---
+    document.querySelectorAll('.timeline-header').forEach(header => {
+        header.addEventListener('click', () => {
+            const body = header.nextElementSibling;
+            const isOpen = body.classList.contains('open');
+
+            // Close all others first
+            document.querySelectorAll('.timeline-body').forEach(b => b.classList.remove('open'));
+            document.querySelectorAll('.timeline-header').forEach(h => h.setAttribute('aria-expanded', 'false'));
+
+            // Toggle the clicked one
+            if (!isOpen) {
+                body.classList.add('open');
+                header.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
 });
