@@ -210,7 +210,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         const data = await response.json();
                         typeWriter(data.reply, aiOutput);
                     } else if (!response.ok) {
-                        throw new Error('Network response was not ok');
+                        // Try to read the error body for better diagnostics
+                        let errMsg = `[HTTP ${response.status}]`;
+                        try {
+                            const errData = await response.json();
+                            errMsg += ' ' + (errData.error || JSON.stringify(errData));
+                        } catch (_) {
+                            errMsg += ' ' + (await response.text().catch(() => 'No response body'));
+                        }
+                        aiOutput.textContent = `AI request failed: ${errMsg}`;
                     } else {
                         const data = await response.json();
                         // Typewriter effect for AI reply
@@ -218,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
 
                 } catch (error) {
-                    aiOutput.textContent = "Unable to reach the AI assistant. The server may be temporarily unavailable — please try again in a moment.";
+                    aiOutput.textContent = `Connection error: ${error.message}`;
                 }
             }
         });
