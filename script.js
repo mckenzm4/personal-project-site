@@ -152,30 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- AI DATA ASSISTANT LOGIC ---
 
-    // 1. Portfolio Context (The "Brain" for the LLM)
-    const portfolioContext = {
-        owner: "Michael McKenzie[Your Name]",
-        role: "Business Intelligence Developer",
-        skills: ["Snowflake", "Power BI", "Data Modeling", "SQL", "Python", "ETL"],
-        experience: [
-            {
-                title: "The Strategist",
-                desc: "Migrated legacy Hyperion reporting to Power BI, resulting in 40% performance boost and $20k cost savings."
-            },
-            {
-                title: "The Engineer",
-                desc: "Optimized Snowflake data pipelines and warehouse architecture for SpartanNash."
-            }
-        ],
-        projects: [
-            {
-                title: "The Visualizer",
-                desc: "Real-time Solana crypto dashboard using custom API integrations."
-            }
-        ],
-        contact: "See RESUME_DOWNLOAD for contact details."
-    };
-
     const aiInput = document.getElementById('ai-input');
     const aiModal = document.getElementById('ai-response-modal');
     const aiOutput = document.getElementById('ai-output');
@@ -244,15 +220,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             type();
         }
-    }
-
-    // Resume Download Mock interaction
-    const resumeBtn = document.querySelector('.btn-resume');
-    if (resumeBtn) {
-        resumeBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Downloading Michael McKenzie\'s Resume...');
-        });
     }
 
 });

@@ -6,7 +6,7 @@
             "use": "@vercel/node"
         },
         {
-            "src": "*.{html,css,js,png}",
+            "src": "*.{html,css,js,png,pdf}",
             "use": "@vercel/static"
         }
     ],
@@ -26,6 +26,10 @@
         {
             "src": "/headshot.png",
             "dest": "/headshot.png"
+        },
+        {
+            "src": "/McKenzie_Resume.pdf",
+            "dest": "/McKenzie_Resume.pdf"
         },
         {
             "src": "/",

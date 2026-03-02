@@ -1,20 +1,11 @@
 const { GoogleGenerativeAI } = require("@google/generative-ai");
+const fs = require('fs');
+const path = require('path');
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-const michaelContext = `
-You are a helpful AI assistant for Michael McKenzie's professional portfolio website.
-Michael is a Business Intelligence Developer at SpartanNash.
-Skills: Snowflake, Power BI, Data Modeling, SQL, Python (Pandas/Spark/Snowpark), Machine Learning.
-Key Work:
-1. "The Strategist": Migrated Hyperion to Power BI (40% boost, $20k savings).
-2. "The Engineer": Optimized Snowflake pipelines/architecture at SpartanNash.
-3. "The Visualizer": Real-time Solana crypto dashboard.
-
-Michael is passionate about turning messy data into intuitive, high-performance tools.
-Answer questions about Michael's work, skills, and background professionally and concisely.
-If a question is outside Michael's professional scope, politely steer it back.
-`;
+// Load context once at startup — edit api/context.md to update the AI's knowledge
+const michaelContext = fs.readFileSync(path.join(__dirname, 'context.md'), 'utf-8');
 
 module.exports = async (req, res) => {
     // Enable CORS
