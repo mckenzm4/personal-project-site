@@ -52,7 +52,7 @@ module.exports = async (req, res) => {
 
         } catch (error) {
             console.error('Error calling Gemini:', error);
-            return res.status(500).json({ error: 'Failed to communicate with AI' });
+            return res.status(500).json({ error: error.message || 'Failed to communicate with AI' });
         }
     } else {
         res.status(405).json({ error: 'Method not allowed' });
