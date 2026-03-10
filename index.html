@@ -216,47 +216,17 @@
         </section>
 
 
-        <!-- Personal Projects Section -->
+        <!-- Personal Projects Section — populated via GitHub API -->
         <section id="personal" class="projects container">
             <h2 class="section-title">Personal Portfolio</h2>
-            <div class="projects-grid">
-                <!-- Project 1: The Visualizer (Moved to Personal) -->
-                <article class="project-card visualizer">
-                    <div class="card-content">
-                        <div class="card-header">
-                            <span class="tag">Data Visualization</span>
-                            <span class="tag">Solana/Crypto</span>
-                        </div>
-                        <h3>The Visualizer</h3>
-                        <div class="media-placeholder">
-                            <div class="chart-mockup">
-                                <div style="height: 60%"></div>
-                                <div style="height: 80%"></div>
-                                <div style="height: 40%"></div>
-                                <div style="height: 90%"></div>
-                                <div style="height: 50%"></div>
-                            </div>
-                        </div>
-                        <p>Real-time Solana dashboard leveraging custom API integrations.</p>
-                    </div>
-                </article>
-
-                <!-- Future Project Placeholder/Skeleton -->
-                <article class="project-card skeleton">
-                    <div class="card-content">
-                        <div class="card-header">
-                            <span class="tag">Developing...</span>
-                        </div>
-                        <h3>[Upcoming Project]</h3>
-                        <div class="media-placeholder">
-                            <p style="color: var(--accent-muted); font-family: var(--font-mono); font-size: 0.8rem;">
-                                In Development</p>
-                        </div>
-                        <p>Next exploration into specialized data visualization and predictive modeling.</p>
-                    </div>
-                </article>
+            <p class="section-subtitle">Live from <a href="https://github.com/mckenzm4" target="_blank"
+                    rel="noopener">GitHub ↗</a></p>
+            <div class="projects-grid" id="github-projects-grid">
+                <div class="gh-skeleton"></div>
+                <div class="gh-skeleton"></div>
             </div>
         </section>
+
 
         <section id="skills" class="skills container">
             <h2 class="section-title">Tech Stack</h2>
@@ -282,14 +252,51 @@
             </div>
         </section>
 
-        <section id="about" class="about container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>Background in building historical pricing models and enterprise data solutions at
-                    <strong>SpartanNash</strong>.
-                </p>
-                <p>Focused on transforming raw data into actionable intelligence through robust engineering and
-                    intuitive visualization.</p>
+        <section id="beyond" class="beyond container">
+            <h2 class="section-title">Beyond the Data</h2>
+            <div class="beyond-grid">
+                <!-- System Profile -->
+                <div class="beyond-card system-profile">
+                    <h3>System Profile</h3>
+                    <p class="beyond-sub">Because culture fit matters as much as technical fit.</p>
+                    <ul class="sys-specs">
+                        <li><span class="spec-label">Architecture</span> <span class="spec-val"><a
+                                    href="https://www.16personalities.com/intj-personality" target="_blank"
+                                    rel="noopener">INTJ</a></span></li>
+                        <li><span class="spec-label">Core Engine</span> <span class="spec-val"><a
+                                    href="https://www.truity.com/blog/enneagram-type/type-three" target="_blank"
+                                    rel="noopener">Enneagram 3</a></span></li>
+                        <li><span class="spec-label">Operating Mode</span> <span class="spec-val">Curious &
+                                Energetic</span></li>
+                        <li><span class="spec-label">Fuel Source</span> <span class="spec-val">Black Coffee &
+                                Sunshine</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Offline Processes -->
+                <div class="beyond-card offline-processes">
+                    <h3>Offline Processes</h3>
+                    <p class="beyond-sub">What's running when I'm away from the keyboard:</p>
+                    <div class="hobby-tags">
+                        <span class="tag">🏠 Home Improvement</span>
+                        <span class="tag">🌎 Travel</span>
+                        <span class="tag">🏄‍♂️ Life on the Lake</span>
+                        <span class="tag">🏋️ Weightlifting</span>
+                        <span class="tag">🐈‍⬛ Full-time Cat Servant</span>
+                        <span class="tag">🤝 Family & Friends</span>
+                    </div>
+                </div>
+
+                <!-- The Human Element -->
+                <div class="beyond-card human-element">
+                    <h3>The Human Element</h3>
+                    <p>I’ve found that the most impactful work happens when you step out of the data and talk to the
+                        people who actually use it. Business Intelligence development is about
+                        understanding the problem from a user's perspective before ever touching the code. Engineering
+                        is the "how," but the people behind the business are always the "why." Without them, I would not
+                        have a job. Without me, they couldn't do theirs.</p>
+                </div>
             </div>
         </section>
     </main>
